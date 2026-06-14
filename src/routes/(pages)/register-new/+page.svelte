@@ -1,13 +1,13 @@
 <script lang="ts">
-  import type { PageProps } from "./$types";
   import { enhance } from "$app/forms";
-  import { slide, fade } from "svelte/transition";
-  import { quintOut, cubicOut } from "svelte/easing";
-  import RadioButton from "$lib/components/forms/RadioButton.svelte";
   import Checkbox from "$lib/components/forms/Checkbox.svelte";
-  import SocialDropdown from "$lib/components/forms/SocialDropdown.svelte";
-
+  import RadioButton from "$lib/components/forms/RadioButton.svelte";
   import RegistrationSchema from "$lib/components/forms/RegistrationSchema";
+  import SocialDropdown from "$lib/components/forms/SocialDropdown.svelte";
+  import { quintOut, cubicOut } from "svelte/easing";
+  import { slide, fade } from "svelte/transition";
+
+  import type { PageProps } from "./$types";
 
   let { data, form }: PageProps = $props();
 
@@ -52,7 +52,7 @@
 <section class="mx-auto max-w-3xl space-y-8">
   <div class="space-y-2">
     <h1 class="text-4xl font-bold">Register</h1>
-    <p class="text-furworks-red text-sm">* indicates required field</p>
+    <p class="text-sm text-furworks-red">* indicates required field</p>
   </div>
 
   <form method="POST" use:enhance class="space-y-8">
@@ -106,7 +106,7 @@
             placeholder="@username"
             maxlength="16"
             required
-            class="focus:ring-furworks w-3/4 rounded-l-none rounded-r-md border border-l-0 border-neutral-800 bg-neutral-900 p-3 text-sm transition-colors duration-75 ease-out outline-none focus:ring" />
+            class="w-3/4 rounded-l-none rounded-r-md border border-l-0 border-neutral-800 bg-neutral-900 p-3 text-sm transition-colors duration-75 ease-out outline-none focus:ring focus:ring-furworks" />
         </div>
       </div>
       <div class="space-y-2">
@@ -174,13 +174,13 @@
               id="other-text"
               placeholder="Please specify"
               required
-              class="focus:ring-furworks mt-2 w-full rounded-md border border-neutral-800 bg-neutral-900 p-3 text-sm transition-all duration-200 ease-in-out outline-none focus:ring" />
+              class="mt-2 w-full rounded-md border border-neutral-800 bg-neutral-900 p-3 text-sm transition-all duration-200 ease-in-out outline-none focus:ring focus:ring-furworks" />
           </div>
         </div>
       {/if}
     </fieldset>
 
-    <div class="font-ibm-plex-mono space-y-4">
+    <div class="space-y-4 font-ibm-plex-mono">
       <Checkbox id="agree_age" required bind:checked={agreeAge}>
         I confirm that I am, or will be, at least 21 years of age at the start of the event, and
         understand that providing false information may result in denial of entry.
@@ -217,15 +217,11 @@
 
   input[type="text"],
   input[type="email"] {
-    @apply ring-furworks w-full bg-neutral-900 p-3 text-sm transition-colors duration-75 ease-out outline-none focus:ring;
-  }
-
-  select {
-    @apply ring-furworks bg-neutral-900 p-3 text-sm transition-colors duration-75 ease-out focus:ring;
+    @apply w-full bg-neutral-900 p-3 text-sm ring-furworks transition-colors duration-75 ease-out outline-none focus:ring;
   }
 
   input[type="submit"] {
-    @apply ring-furworks hover:bg-furworks cursor-pointer rounded-md bg-neutral-900 px-8 py-3 text-white transition-colors ease-out outline-none hover:text-neutral-900 focus:ring;
+    @apply cursor-pointer rounded-md bg-neutral-900 px-8 py-3 text-white ring-furworks transition-colors ease-out outline-none hover:bg-furworks hover:text-neutral-900 focus:ring;
   }
 
   input[type="submit"][disabled] {
@@ -233,6 +229,6 @@
   }
 
   a {
-    @apply hover:text-furworks underline;
+    @apply underline hover:text-furworks;
   }
 </style>

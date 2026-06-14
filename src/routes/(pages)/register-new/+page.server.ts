@@ -1,7 +1,6 @@
-import { z } from "zod";
-import type { Actions } from "./$types";
-
 import RegistrationSchema from "$lib/components/forms/RegistrationSchema";
+
+import type { Actions } from "./$types";
 
 export const actions = {
   default: async ({ request }) => {

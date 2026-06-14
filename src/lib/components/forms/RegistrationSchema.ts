@@ -14,7 +14,7 @@ const registrationSchema = z
       .transform((val) => val.toLowerCase())
       .pipe(
         z.enum(validSocialPlatforms, {
-          errorMap: () => ({ message: "Please select a valid social platform" })
+          error: "Please select a valid social platform"
         })
       ),
     social_handle: z.string().min(1, "Social handle is required"),
@@ -26,7 +26,7 @@ const registrationSchema = z
       .transform((val) => val.toLowerCase())
       .pipe(
         z.enum(validRefers, {
-          errorMap: () => ({ message: "Please select a valid referral source" })
+          error: "Please select a valid referral source"
         })
       ),
     how_referred_other: z.string().optional(),

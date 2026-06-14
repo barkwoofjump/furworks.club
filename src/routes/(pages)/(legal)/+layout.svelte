@@ -2,6 +2,6 @@
   let { children } = $props();
 </script>
 
-<article class="prose prose-invert font-manrope container min-w-full">
+<article class="container prose min-w-full font-manrope prose-invert">
   {@render children()}
 </article>

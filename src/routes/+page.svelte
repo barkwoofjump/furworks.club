@@ -1,9 +1,8 @@
 <script lang="ts">
+  import { NoisePass } from "$lib/NoisePass";
+  import { ScanlinesPass } from "$lib/ScanlinesPass";
   import { onMount, onDestroy } from "svelte";
   import * as THREE from "three";
-  import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
-  import { EffectComposer, type Pass } from "three/examples/jsm/postprocessing/EffectComposer.js";
-  import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
   import {
     AfterimagePass,
     BrightnessContrastShader,
@@ -12,8 +11,10 @@
     ShaderPass,
     UnrealBloomPass
   } from "three/examples/jsm/Addons.js";
-  import { NoisePass } from "$lib/NoisePass";
-  import { ScanlinesPass } from "$lib/ScanlinesPass";
+  import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
+  import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+  import { type Pass } from "three/examples/jsm/postprocessing/Pass.js";
+  import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 
   let canvas: HTMLCanvasElement | null = null;
   let camera: THREE.PerspectiveCamera | null = null;
@@ -218,13 +219,13 @@
       </div>
       <div class="flex flex-col gap-4 sm:flex-row">
         <a href="https://bsky.app/profile/furworks.bsky.social" aria-label="Bluesky">
-          <span class="icon-[fa6-brands--bluesky] social-link"></span></a>
+          <span class="social-link icon-[fa6-brands--bluesky]"></span></a>
         <a href="https://x.com/thisisfurworks" aria-label="Twitter"
-          ><span class="icon-[fa6-brands--twitter] social-link"></span></a>
+          ><span class="social-link icon-[fa6-brands--twitter]"></span></a>
         <a href="https://instagram.com/thisisfurworks" aria-label="Twitter"
-          ><span class="icon-[fa6-brands--instagram] social-link"></span></a>
+          ><span class="social-link icon-[fa6-brands--instagram]"></span></a>
         <a href="https://t.me/+sfvbvgLQZGcwYmI5" aria-label="Telegram">
-          <span class="icon-[fa6-brands--telegram] social-link"></span></a>
+          <span class="social-link icon-[fa6-brands--telegram]"></span></a>
       </div>
     </div>
     <canvas
@@ -240,6 +241,6 @@
   @reference "tailwindcss/theme";
   @reference "../app.css";
   .social-link {
-    @apply hover:text-furworks-purple size-4 transition-colors duration-100 sm:size-6;
+    @apply size-4 transition-colors duration-100 hover:text-furworks-purple sm:size-6;
   }
 </style>

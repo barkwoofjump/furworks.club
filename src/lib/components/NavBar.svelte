@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { clickoutside } from "@svelte-put/clickoutside";
-  import { page } from "$app/state";
   import { afterNavigate } from "$app/navigation";
+  import { page } from "$app/state";
+  import { clickoutside } from "@svelte-put/clickoutside";
 
   let isRoot = $derived(page.url.pathname === "/");
   let scrollY = $state(0);
@@ -40,7 +40,7 @@
   <!-- branding -->
   <a href="/" class="group relative flex items-center gap-2">
     <div class="bg-fit size-6 bg-[url('/img/fwks.svg')] bg-center bg-no-repeat sm:size-8"></div>
-    <h1 class="text-furworks translate-y-[0.15rem] transform text-2xl sm:text-3xl">FURWORKS</h1>
+    <h1 class="translate-y-[0.15rem] transform text-2xl text-furworks sm:text-3xl">FURWORKS</h1>
     <span class="text-furworks underline"></span>
   </a>
 

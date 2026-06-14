@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { fade, slide } from "svelte/transition";
-  import { quintOut, cubicOut } from "svelte/easing";
   import { clickoutside } from "@svelte-put/clickoutside";
+  import { quintOut, cubicOut } from "svelte/easing";
+  import { fade, slide } from "svelte/transition";
 
   interface Props {
     options: { value: string; label: string; icon: string }[];
@@ -87,7 +87,7 @@
     type="button"
     tabindex="0"
     aria-label="Select option"
-    class="focus:ring-furworks flex w-full items-center justify-between rounded-l-md border border-neutral-800 bg-neutral-900 px-3 py-3 text-sm focus:ring-1 focus:outline-none"
+    class="flex w-full items-center justify-between rounded-l-md border border-neutral-800 bg-neutral-900 px-3 py-3 text-sm focus:ring-1 focus:ring-furworks focus:outline-none"
     onclick={(e) => {
       e.stopPropagation();
       isOpen = !isOpen;

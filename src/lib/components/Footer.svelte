@@ -2,7 +2,7 @@
   const year = new Date().getFullYear(); // runs serverside
 </script>
 
-<footer class="font-ibm-plex-mono w-screen bg-neutral-900 text-sm text-neutral-400">
+<footer class="w-screen bg-neutral-900 font-ibm-plex-mono text-sm text-neutral-400">
   <div class="container mx-auto flex flex-col gap-6 px-8 py-10 lg:flex-row lg:gap-3">
     <!-- column 1 -->
     <div class="flex flex-1 flex-col items-start">

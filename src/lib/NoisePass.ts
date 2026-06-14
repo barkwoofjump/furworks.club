@@ -15,7 +15,7 @@ const NoiseShader = {
   name: "NoiseShader",
 
   uniforms: {
-    tDiffuse: { value: Texture.DEFAULT_IMAGE },
+    tDiffuse: { value: Texture.DEFAULT_IMAGE as Texture | null },
     time: { value: 0.0 },
     intensity: { value: 0.5 }
   },

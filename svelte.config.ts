@@ -1,15 +1,11 @@
-import adapter from "@sveltejs/adapter-vercel";
+import adapter from "@sveltejs/adapter-cloudflare";
+import type { Config } from "@sveltejs/kit";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { mdsvex } from "mdsvex";
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
+const config: Config = {
   preprocess: [vitePreprocess(), mdsvex()],
-
-  kit: {
-    adapter: adapter()
-  },
-
+  kit: { adapter: adapter() },
   extensions: [".svelte", ".svx"]
 };
 

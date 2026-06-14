@@ -1,7 +1,14 @@
 <script lang="ts">
-  export let id = "";
-  export let required = false;
-  export let checked = false;
+  import type { Snippet } from "svelte";
+
+  interface Props {
+    id?: string;
+    required?: boolean;
+    checked?: boolean;
+    children?: Snippet;
+  }
+
+  let { id = "", required = false, checked = $bindable(false), children }: Props = $props();
 </script>
 
 <label class="flex w-full items-start gap-2" for={id}>
@@ -14,8 +21,8 @@
     class="peer sr-only"
     aria-checked={checked} />
   <span
-    class="peer-checked:bg-furworks peer-checked:border-furworks peer-focus-visible:ring-furworks flex size-5 items-center justify-center rounded border border-neutral-800
-  bg-neutral-900 transition-colors duration-75 ease-out peer-focus-visible:ring-2"
+    class="flex size-5 items-center justify-center rounded border border-neutral-800 bg-neutral-900 transition-colors duration-75
+  ease-out peer-checked:border-furworks peer-checked:bg-furworks peer-focus-visible:ring-2 peer-focus-visible:ring-furworks"
     aria-hidden="true">
     <span
       class={[
@@ -24,6 +31,6 @@
       ]}></span>
   </span>
   <span class="text-sm text-neutral-200">
-    <slot />
+    {@render children?.()}
   </span>
 </label>

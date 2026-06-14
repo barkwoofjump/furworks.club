@@ -1,7 +1,15 @@
-/* tailwind */
 @import "tailwindcss";
+@import "@fontsource/ibm-plex-mono";
+@import "@fontsource-variable/manrope";
+
 @plugin "@tailwindcss/typography";
 @plugin "@iconify/tailwind4";
+
+/* icons referenced through runtime-interpolated classes in SocialDropdown can't be
+   seen by the tailwind source scanner, so list them here to force generation */
+@source inline(
+  "icon-[fa6-brands--bluesky] icon-[fa6-brands--twitter] icon-[fa6-brands--instagram]"
+);
 
 @theme {
   --color-furworks: hsl(84, 100%, 50%);
@@ -10,17 +18,10 @@
   --color-furworks-blue: hsl(202, 100%, 50%);
   --color-furworks-red: hsl(8, 100%, 50%);
   --color-furworks-white: hsl(210, 100%, 95%);
-  /* fonts */
+
   --font-ppformula: "PP Formula Extended Black", sans-serif;
   --font-ibm-plex-mono: "IBM Plex Mono", monospace;
   --font-manrope: "Manrope Variable", sans-serif;
-}
-
-@import "@fontsource/ibm-plex-mono";
-@import "@fontsource-variable/manrope";
-
-body {
-  @apply text-furworks-white font-ppformula bg-black antialiased;
 }
 
 @font-face {
@@ -32,4 +33,8 @@ body {
   font-weight: 900;
   font-style: normal;
   font-display: swap;
+}
+
+body {
+  @apply bg-black font-ppformula text-furworks-white antialiased;
 }

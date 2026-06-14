@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "furworks-club",
+  "main": ".svelte-kit/cloudflare/_worker.js",
+  "compatibility_date": "2026-06-14",
+  "compatibility_flags": ["nodejs_als"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".svelte-kit/cloudflare"
+  },
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "furworks.club",
+      "custom_domain": true
+    }
+  ]
+}
