@@ -10,8 +10,7 @@
   let innerWidth = $state(0);
 
   const navLinks = [
-    { href: "/register", text: "REGISTER" },
-    { href: "/merch", text: "MERCH" }
+    { href: "/register", text: "REGISTER" }
   ];
 
   const closeMenu = () => (menuOpen = false);
